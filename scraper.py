@@ -27,10 +27,10 @@ class ECWeather:
 		"?searchType=stnProv&timeframe=1&lstProvince=&optLimit=yearRange&StartYear=1840"\
 		"&EndYear=2014&Year=2014&Month=9&Day=16&selRowPerPage=100&cmdProvSubmit=Search"
 
-    def sleep():
+    def sleep(self):
 	time.sleep(self.sleep_seconds)
 
-    def run():
+    def run(self):
 	"""
 	this function is where the code starts, it walks through all the link params found on the initial search page, and gets the data for each one.
 
@@ -41,7 +41,7 @@ class ECWeather:
 		data.append(data)
 	return data
 
-    def get_all_link_params():
+    def get_all_link_params(self):
 	"""
 	this function parses the search page, and builds a list of dictionaries, each dictionary representing a row, i.e.
 		row = {
@@ -66,7 +66,7 @@ class ECWeather:
 	return all_params
 
 
-    def get_link_params(element):
+    def get_link_params(self, element):
 	"""
 	this function takes a soup element, and returns a dictionary like this:
 		{
@@ -82,13 +82,13 @@ class ECWeather:
 	# TODO: fill in row_data
 	return row_data
 
-    def get_pages_of_data(link_params):
+    def get_pages_of_data(self, link_params):
 	"""
 	this function will take all desired permutations and combinations of the link_params, and call get_page_of_data.
 	then it will 
 	"""
 
-    def get_page_of_data(timeframe, province, station_id, daily_range, year, month, day):
+    def get_page_of_data(self, timeframe, province, station_id, daily_range, year, month, day):
 	params = {
 	  'timeframe': timeframe,  #2,
 	  'Prov': province,  #"AB",
